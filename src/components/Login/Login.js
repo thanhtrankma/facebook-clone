@@ -15,17 +15,14 @@ const Login = () => {
     const [state, dispatch] = useStateValue();
 
     const signIn = () => {
-        // sign in
-        auth.signInWithPopup(provider)
-        .then(result => {
-
-            dispatch({
+        dispatch({
                 type: actionTypes.SET_USER,
-                user: result.user
+                user: {
+                    displayName: "Thành Trần",
+                    email: "tranthanhkk@gmail.com"
+                }
             });
-            console.log(result);
-        })
-        .catch(error => alert(error.message))
+        // sign in
     }
 
     return (
